@@ -176,7 +176,7 @@ def _get_auth_token_id(
         _password: str,
         _env: str,
 ) -> str:
-    headers = {
+    _headers = {
         "Content-Type": "application/x-www-form-urlencoded",
         "Referer": _referer,
     }
@@ -186,7 +186,7 @@ def _get_auth_token_id(
         _receiver_url,
         params=_tokens,
         auth=ntlm_auth,
-        headers=headers,
+        headers=_headers,
         allow_redirects=False,
         verify=VERIFY,
     )

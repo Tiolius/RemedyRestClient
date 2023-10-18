@@ -119,10 +119,10 @@ class TokenExtractionParser(HTMLParser):
         raise ValueError("The parsed page does not contain necessary tokens")
 
 
-def _construct_urls(env: str) -> Tuple[str, str]:
+def _construct_urls(_env: str) -> Tuple[str, str]:
     if environment not in env_configs:
         raise ValueError(f"Use one of {', '.join(env_configs.keys())} as environment")
-    env_url_parts = env_configs[env]
+    env_url_parts = env_configs[_env]
     sso_url = "{}/rsso/start".format(env_url_parts["sso_url"])
     receiver_url = "{}/rsso/receiver".format(env_url_parts["sso_url"])
     return sso_url, receiver_url

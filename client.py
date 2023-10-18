@@ -262,8 +262,7 @@ def _load_page(_url: str, _jwt_token: str) -> Dict:
     logger.info("Loading page from url: %s", _url)
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"AR-JWT {_jwt_token}",
-        "x-requested-by": "x"
+        "Authorization": f"AR-JWT {_jwt_token}"
     }
 
     resp = requests.get(_url, headers=headers, verify=VERIFY)
